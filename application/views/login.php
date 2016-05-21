@@ -13,7 +13,7 @@
 </head>
 <body>
 	<header>
-		<nav>
+		<nav class="purple">
 		    <div class="container nav-wrapper ">
 		      <a href="<?= base_url() ?>" class="brand-logo">IMP</a>
 		    </div>
@@ -39,7 +39,7 @@
 				</div>
 				<div class="row">
 					<div class="input-field col s12">
-						<input class="btn-large col s12" type="submit" value="Ingresar" />		
+						<input class="btn-large col s12 purple" type="submit" value="Ingresar" />		
 					</div>
 				</div>
 			</form>

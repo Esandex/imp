@@ -75,6 +75,7 @@ $query_builder = TRUE;
 
 $db['default'] = array(
 	'dsn'	=> '',
+	//'hostname' => 'localhost',
 	'hostname' => 'esandex.com',
 	'username' => 'esandex_admin',
 	'password' => 'T3mporal',
