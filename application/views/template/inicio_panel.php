@@ -21,7 +21,7 @@
 		      	<?php if($menus_permitidos != false){ foreach ($menus_permitidos->result() as $menu_permitido) {?> 
 		      			<li><a href="<?= base_url().$menu_permitido->url ?>"><?= $menu_permitido->description ?></a></li>
 		      	<?php }} ?>
-				<li><a href="mi-perfil"><?= $username ?></a></li>
+				<li><a href="<?= base_url() ?>mi-perfil"><?= $username ?></a></li>
 		        <li><a href="home/cerrar_sesion" class="btn">Cerrar Sesión</a></li>
 		      </ul>
 		    </div>
@@ -29,7 +29,7 @@
 		    	<?php if($menus_permitidos != false){ foreach ($menus_permitidos->result() as $menu_permitido) {?> 
 		      			<li><a href="<?= base_url().$menu_permitido->url ?>"><?= $menu_permitido->description ?></a></li>
 		      	<?php }} ?>
-		      	<li><a href="mi-perfil"><?= $username ?></a></li>
+		      	<li><a href="<?= base_url() ?>mi-perfil"><?= $username ?></a></li>
 		        <li><a href="home/cerrar_sesion" class="btn">Cerrar Sesión</a></li>
 		    </ul>
 		</nav>        
