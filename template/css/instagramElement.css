@@ -129,8 +129,8 @@
 }
 
 .instagram-element .instagram-photo:hover .icon { display:block; }
-.instagram-element .instagram-photo.video .icon { background:url("images/video-icon.png") no-repeat; }
-.instagram-element .instagram-photo.image .icon { background:url("images/image-icon.png") no-repeat; }
+/*.instagram-element .instagram-photo.video .icon { background:url("images/video-icon.png") no-repeat; }
+.instagram-element .instagram-photo.image .icon { background:url("images/image-icon.png") no-repeat; }*/
 
 /* User List */
 .instagram-user-all { background: none; cursor:pointer; display: inline-block; float: left; line-height: 0; width: 5%; }
