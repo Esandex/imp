@@ -42,7 +42,7 @@
             <ul class="sidebar-nav">
                 <li class="sidebar-brand">
                     <a href="#">
-                        <img src="template/images/logo.png" width="150" />
+                        <img src="template/images/logo_blanco.png" width="150" />
                     </a>
                 </li>
                 <li>

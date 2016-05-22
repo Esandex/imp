@@ -26,9 +26,9 @@ class Login extends CI_Controller {
             );
             $this->session->set_userdata($usuario_data);
             echo "Bienvenido " . $ResultSet->username;
-            redirect(base_url());
+            redirect(base_url()."panel");
 		}else{
-			redirect(base_url());	
+			redirect(base_url()."login");	
 		}
 	}
 }

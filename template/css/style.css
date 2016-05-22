@@ -372,6 +372,7 @@ a:hover { text-decoration:none; }
 
 /* Responsive
 --------------------------*/
+
 @media(min-width:768px) {
     #wrapper { padding-left: 250px; }
     #sidebar-wrapper { width: 250px; }
@@ -380,6 +381,10 @@ a:hover { text-decoration:none; }
 
 @media screen and (max-width: 768px){ 
 	.ig-controller { display:none; } 
+	#sidebar-wrapper { margin:0; position:static; width:100%; }
+	#sidebar-wrapper .sidebar-nav { width:100%; }
+	#sidebar-wrapper .sidebar-nav li { display:none; }
+	#sidebar-wrapper .sidebar-nav > .sidebar-brand { display:block; margin-bottom:0; }
 }
 
 @media screen and (max-height: 595px) {  .share { display:none; } }
