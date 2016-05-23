@@ -11,7 +11,7 @@
 	<div class="row">
 		<h4 class="purple-text text-darken-2">Nuevo Producto</h4>
 	</div>
-	<form action="insertar" method="post">
+	<form action="insertar" method="post" enctype="multipart/form-data" >
 		<div class="row">
 			<div class="input-field col s12 m6">
 	          <input id="name" name="name" type="text" class="validate" required>

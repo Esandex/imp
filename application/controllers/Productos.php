@@ -33,12 +33,26 @@ class Productos extends CI_Controller {
 	}
 	public function insertar()
 	{
+		$config['upload_path'] = 'template/images/';
+		$config['allowed_types'] = 'gif|jpg|png';
+		$config['max_size']	= '100';
+		$config['max_width'] = '1024';
+		$config['max_height'] = '768';
+		if ( ! is_dir($config['upload_path']) ) die("THE UPLOAD DIRECTORY DOES NOT EXIST");
+		$this->upload->initialize($config);
 		$data = array(	
 						'name' 			=> $this->input->post('name'), 
 						'description' 	=> $this->input->post('description'),
 						'username' 		=> $this->session->userdata('username')
 					 );
-		echo 
+		if (!$this->upload->do_upload('image'))
+		{
+			$upload_error = array('error' => $this->upload->display_errors());
+            var_dump($upload_error);
+		}else{
+			$data['image'] = $this->upload->data();
+		}
+		var_dump($data['image']);
 		//$this->Productos_model->create($data);
 	}
 }
