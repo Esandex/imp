@@ -8,17 +8,16 @@ class Productos_model extends CI_Model
 		parent::__construct();
 	}
 	
-	function create(){
-
-		$carpeta = base_url()."template/images/";
-		opendir($carpeta);
-		$destino = $carpeta.$_FILES['image']['name'];	
-		copy($_FILES['image']['tmp_name'], $destino);
-		//$im = file_get_contents($destino);
-		//$imdata = base64_encode($im);
-		//$id_usuario = $_POST['id_usuario']; 
-		//unlink($destino);
-		
+	function create($data){
+		$now = date('Y-m-d H:m:s'); 
+		$data = array(
+						'product_name' 			=> $data['name'],
+						'product_description' 	=> $data['description'],
+						'product_image'			=> $data['image64'],
+						'date_update'			=> $now,
+						'username_register' 	=> $data['username']
+					 );
+		$this->db->insert('products', $data);
 	}
 	function read_all(){
 		$query = $this->db->get('products');

@@ -49,7 +49,7 @@
                     <a class="sub toggle-config" href="#" title="customize-source">Porque tu sonrisa es el mejor maquillaje</a>
                 </li>
                	<li>
-               		<a class="sub toggle-config" href="login">Iniciar Sesión</a>
+               		<a class="sub toggle-config" href="panel">Iniciar Sesión</a>
                	</li>
 				<li class="share">
 					<a target="_blank" class="facebook" href="https://www.facebook.com/impoficiall/">Facebook</a>

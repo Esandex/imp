@@ -18,6 +18,7 @@ class Perfil extends CI_Controller {
 		$data['menus_permitidos'] = $this->Usuarios_model->listar_menu_permitidos($this->session->userdata('id'));
 		$data['users'] = $this->Usuarios_model->read_all();
 		$this->load->view('template/inicio_panel', $data);
+		$this->load->view('perfil');
 		$this->load->view('template/fin_panel');
 	}
 }

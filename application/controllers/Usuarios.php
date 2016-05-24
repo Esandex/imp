@@ -37,7 +37,8 @@ class Usuarios extends CI_Controller {
 	{
 		$data = array(	
 						'name' 		=> $this->input->post('name'),
-						'email' 	=> $this->input->post('email')
+						'email' 	=> $this->input->post('email'),
+						'username'	=> $this->session->userdata('username')
 					 );
 		
 		$this->Registro_model->insertar($data);

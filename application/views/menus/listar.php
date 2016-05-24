@@ -1,7 +1,7 @@
 <nav class="purple lighten-1">
 	<div class="nav-wrapper">
 	  <div class="col s12">
-	    <a href="<?= base_url() ?>" class="breadcrumb">Inicio</a>
+	    <a href="<?= base_url() ?>panel" class="breadcrumb">Inicio</a>
 	    <a href="#!" class="breadcrumb">Menus</a>
 	  </div>
 	</div>

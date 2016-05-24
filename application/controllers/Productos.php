@@ -50,9 +50,14 @@ class Productos extends CI_Controller {
 			$upload_error = array('error' => $this->upload->display_errors());
             var_dump($upload_error);
 		}else{
-			$data['image'] = $this->upload->data();
+			$upload = array('image' => $this->upload->data());
+			$im = file_get_contents($upload['image']['full_path']);
+			$imdata = base64_encode($im);
+			$data['image64'] = $imdata;
+			unlink($upload['image']['full_path']);
 		}
-		var_dump($data['image']);
-		//$this->Productos_model->create($data);
+		//echo "<img src='data:image/jpeg;base64,".$imdata."'  />";
+		$this->Productos_model->create($data);
+		redirect('productos');
 	}
 }
