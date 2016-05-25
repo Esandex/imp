@@ -35,9 +35,9 @@ class Productos extends CI_Controller {
 	{
 		$config['upload_path'] = 'template/images/';
 		$config['allowed_types'] = 'gif|jpg|png';
-		$config['max_size']	= '100';
-		$config['max_width'] = '1024';
-		$config['max_height'] = '768';
+		//$config['max_size']	= '100';
+		//$config['max_width'] = '1024';
+		//$config['max_height'] = '768';
 		if ( ! is_dir($config['upload_path']) ) die("THE UPLOAD DIRECTORY DOES NOT EXIST");
 		$this->upload->initialize($config);
 		$data = array(	
