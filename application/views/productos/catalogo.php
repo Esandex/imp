@@ -2,7 +2,7 @@
     <div class="nav-wrapper">
       <div class="col s12">
         <a href="<?= base_url()?>panel" class="breadcrumb">Inicio</a>
-        <a href="#!" class="breadcrumb">Productos</a>
+        <a href="#!" class="breadcrumb">Catálogo</a>
       </div>
     </div>
 </nav>
@@ -12,18 +12,17 @@
         <div class="col s12 m6 l3">
             <div class="card">
               <div class="card-image">
-                <img src="data:image/jpeg;base64,<?= $product->product_thumbnail ?>"> 
+                <img src="data:image/jpeg;base64,<?= $product->product_image ?>"> 
                 <span class="card-title purple-text"><?= $product->product_name ?></span>
               </div>
               <div class="card-content">
                 <p><?= $product->product_description ?></p>
               </div>
-              <div class="card-action">
-                <a href="productos/editar/<?= $product->product_id ?>">Editar</a>
-              </div>
             </div>
         </div>
-        <?php }} ?>
+        <?php }}else{  ?>
+          
+        <?php } ?>
     </div>
 </section>
 <div class="fixed-action-btn">

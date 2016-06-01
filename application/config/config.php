@@ -23,7 +23,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 | a PHP script and you can easily do that on your own.
 |
 */
-$config['base_url'] = 'http://localhost:6969/imp/';
+$config['base_url'] = 'http://localhost/imp/';
 //$config['base_url'] = 'http://impoficial.com/';
 //$config['base_url'] = 'http://dev.impoficial.com/';
 
@@ -78,7 +78,7 @@ $config['url_suffix'] = '';
 | than english.
 |
 */
-$config['language']	= 'english';
+$config['language']	= 'spanish';
 
 /*
 |--------------------------------------------------------------------------
