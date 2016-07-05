@@ -30,3 +30,13 @@ nav {
 .input-field .prefix.active {
   color: #000;
 }
+
+/* line 38, ../scss/main.scss */
+.progress {
+  display: none;
+}
+
+/* line 42, ../scss/main.scss */
+.message {
+  padding: 5px;
+}

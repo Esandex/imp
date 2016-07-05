@@ -13,8 +13,7 @@ class Productos_model extends CI_Model
 		$data = array(
 						'product_name' 			=> $data['name'],
 						'product_description' 	=> $data['description'],
-						'product_thumbnail'		=> $data['thumbnail'],
-						'product_image'			=> $data['image64'],
+						'product_image'			=> $data['imagen_id'],
 						'date_update'			=> $now,
 						'username_register' 	=> $data['username']
 					 );

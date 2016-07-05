@@ -13,7 +13,7 @@
 	</div>
 	<div class="row">
 		<div class="col s12">
-			 <img class="responsive-img" src="data:image/jpeg;base64,<?= $product->product_image ?>"> 
+			 <img class="responsive-img" src="<?= base_url() ?>imagen/original/<?= $product->product_image ?>"> 
 		</div>
 		<form action="../update/<?= $product->product_id ?>" class="col s12" method="post">
 			<div class="row">

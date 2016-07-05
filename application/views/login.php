@@ -20,6 +20,14 @@
 		</nav>
 	</header>	
 	<section class="container">
+		<div class="progress">
+	    	<div class="indeterminate"></div>
+	  	</div>
+	  	<?php if($this->session->flashdata('error')){  ?>
+		  	<div class="message teal center">
+		  		<h5 class="white-text"><?= $this->session->flashdata('error'); ?></h5>
+		  	</div>
+	  	<?php } ?>
 		<div class="row center">
 			<h2>Iniciar Sesión</h2>
 		</div>

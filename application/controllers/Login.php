@@ -28,6 +28,7 @@ class Login extends CI_Controller {
             echo "Bienvenido " . $ResultSet->username;
             redirect(base_url()."panel");
 		}else{
+			$this->session->set_flashdata('error', 'Combinacion errónea');
 			redirect(base_url()."login");	
 		}
 	}

@@ -10,6 +10,7 @@ class Productos extends CI_Controller {
 		}else{
 			$this->load->model('Usuarios_model');	
 			$this->load->model('Productos_model');
+			$this->load->model('Imagenes_model');
 		}
 	}
 	public function index()
@@ -21,7 +22,7 @@ class Productos extends CI_Controller {
 		$this->load->view('template/inicio_panel', $data);
 		$this->load->view('productos/listar');
 		$this->load->view('template/fin_panel');
-	}
+	} 
 	public function nuevo()
 	{
 		$data = array();
@@ -48,8 +49,8 @@ class Productos extends CI_Controller {
 	public function insertar()
 	{
 		$config['upload_path'] = 'template/images/';
-		$config['allowed_types'] = 'gif|jpg|jpeg|png';
-		$config['max_size']	= '5120';
+		$config['allowed_types'] = '*';
+		$config['max_size']	= '16384';
 		//$config['max_width'] = '1024';
 		//$config['max_height'] = '768';
 		if ( ! is_dir($config['upload_path']) ) die("THE UPLOAD DIRECTORY DOES NOT EXIST");
@@ -111,19 +112,26 @@ class Productos extends CI_Controller {
 			$lienzo = imagecreatetruecolor( $miniatura_ancho, $miniatura_alto );
 
 			imagecopyresampled($lienzo, $imagen, 0, 0, 0, 0, $miniatura_ancho, $miniatura_alto, $imagen_ancho, $imagen_alto);
-			imagejpeg($lienzo, "miniatura.jpg", 80);
-
-			//imagen original a base64
-			$im = file_get_contents($ruta_imagen);
-			$imdata = base64_encode($im);
-			$data['image64'] = $imdata;
-			unlink($ruta_imagen);
-			//miniatura a base64
-			$mini = file_get_contents("miniatura.jpg");
-			$minidata = base64_encode($mini);
-			$data['thumbnail'] = $minidata;
-			unlink('miniatura.jpg');
-			$this->Productos_model->create($data);	
+			imagejpeg($lienzo, "template/images/miniatura.jpg", 80);
+			//imagen original 
+			$fp = fopen($ruta_imagen, 'r');
+        	$original = fread($fp, filesize($ruta_imagen));
+        	fclose($fp);
+    		$data['original'] = $original;
+    		$data['tipo_imagen'] = $imagen_tipo;
+    		unlink($ruta_imagen);
+    		//miniatura
+			$miniatura = "template/images/miniatura.jpg";
+    		$fp = fopen($miniatura, 'r');
+        	$thumbnail = fread($fp, filesize($miniatura));
+        	fclose($fp);
+    		$data['thumbnail'] = $thumbnail;
+    		$now = date('YmdHms'); 
+        	$data['imagen_id'] = md5($now);
+        	unlink($miniatura);
+    		//insertar imagenes en binario
+    		$this->Imagenes_model->create($data);
+    		$this->Productos_model->create($data);
 			redirect('productos');
 		}
 		//echo "<img src='data:image/jpeg;base64,".$imdata."'  />";

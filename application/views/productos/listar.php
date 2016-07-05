@@ -12,7 +12,7 @@
         <div class="col s12 m6 l3">
             <div class="card">
               <div class="card-image">
-                <img src="data:image/jpeg;base64,<?= $product->product_thumbnail ?>"> 
+                <img src="<?= base_url() ?>imagen/thumbnail/<?= $product->product_image ?>"> 
                 <span class="card-title purple-text"><?= $product->product_name ?></span>
               </div>
               <div class="card-content">
