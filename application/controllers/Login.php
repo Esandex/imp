@@ -13,9 +13,10 @@ class Login extends CI_Controller {
 	}
 	public function validar()
 	{
+        $password = md5($this->input->post('password'));
 		$data = array(	
 						'username' 	=> $this->input->post('username'), 
-						'password' 	=> $this->input->post('password')
+						'password' 	=> $password
 					 );
 		$ResultSet = $this->Usuarios_model->obtenerUsuario($data);
 		if($ResultSet){

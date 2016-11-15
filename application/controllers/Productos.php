@@ -51,16 +51,15 @@ class Productos extends CI_Controller {
 		$config['upload_path'] = 'template/images/';
 		$config['allowed_types'] = '*';
 		$config['max_size']	= '16384';
-		//$config['max_width'] = '1024';
+		//$config['max_width'] = '1024'; 
 		//$config['max_height'] = '768';
 		if ( ! is_dir($config['upload_path']) ) die("THE UPLOAD DIRECTORY DOES NOT EXIST");
-		$this->upload->initialize($config);
-		$data = array(	
-						'name' 			=> $this->input->post('name'), 
-						'description' 	=> $this->input->post('description'),
-						'username' 		=> $this->session->userdata('username')
-					 );
-		$data['menus_permitidos'] = $this->Usuarios_model->listar_menu_permitidos($this->session->userdata('id'));
+			$this->upload->initialize($config);
+			$data = array(	
+							'name' 			=> $this->input->post('name'), 
+							'description' 	=> $this->input->post('description'),
+							'username' 		=> $this->session->userdata('username')
+						 );
 		if (!$this->upload->do_upload('image'))
 		{
 			$data['upload_error'] = $this->upload->display_errors();
@@ -111,7 +110,9 @@ class Productos extends CI_Controller {
 
 			$lienzo = imagecreatetruecolor( $miniatura_ancho, $miniatura_alto );
 
-			imagecopyresampled($lienzo, $imagen, 0, 0, 0, 0, $miniatura_ancho, $miniatura_alto, $imagen_ancho, $imagen_alto);
+			imagecopyresampled(	$lienzo, $imagen, 0, 0, 0, 0, $miniatura_ancho, 
+								$miniatura_alto, 
+								$imagen_ancho, $imagen_alto);
 			imagejpeg($lienzo, "template/images/miniatura.jpg", 80);
 			//imagen original 
 			$fp = fopen($ruta_imagen, 'r');
